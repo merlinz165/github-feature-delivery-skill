@@ -1,0 +1,4 @@
+interface:
+  display_name: "GitHub Feature Delivery"
+  short_description: "Requirements to GitHub issues, worktrees, reviews, and PRs"
+  default_prompt: "Use $github-feature-delivery to turn this requirement into verified GitHub delivery work."
