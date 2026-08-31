@@ -12,7 +12,7 @@ Resolve:
 - open Issues and PRs that may duplicate or overlap the request;
 - which statements are approved decisions versus proposals or dated research.
 
-Do not claim that Codex remembers all project discussions. Recover useful context, then place the confirmed decisions in repository documents and GitHub issues.
+Do not claim that the agent remembers all project discussions. Recover useful context, then place the confirmed decisions in repository documents and GitHub issues.
 
 ## 2. Extract the Requirement Packet
 
@@ -55,7 +55,7 @@ Identify:
 
 Present the proposed Epic, child titles, topology, dependencies, and priority before filing when the user has not already approved the exact issue set.
 
-Do not create placeholder issues. A cold Codex task should be able to read the issue and its referenced repository artifacts without relying on the original conversation.
+Do not create placeholder issues. An independent agent session should be able to read the issue and its referenced repository artifacts without relying on the original conversation.
 
 ### Epic body template
 

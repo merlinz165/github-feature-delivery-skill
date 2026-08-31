@@ -39,10 +39,10 @@ Use the issue's acceptance scenarios as the plan's completion checks. Do not add
 
 ## 4. Work in Isolation
 
-For a Git repository, prefer a Codex-managed worktree or verified Git worktree. Respect repository branch conventions; otherwise use:
+For a Git repository, prefer an agent-managed or otherwise verified Git worktree. Respect repository branch conventions; otherwise use:
 
 ```text
-codex/issue-<number>-<short-slug>
+feature/issue-<number>-<short-slug>
 ```
 
 Verify that the worktree starts from the intended base before editing. If ignored local files are required, use repository-approved setup; do not broadly copy secrets or production credentials.

@@ -1,12 +1,12 @@
-# Codex GitHub Feature Delivery Skill
+# GitHub Feature Delivery Skill
 
-An open-source Codex skill for turning product requirements, feature discussions, and PRDs into detailed GitHub Epics and sub-issues, then delivering one approved issue through an isolated worktree, tests, independent review, and pull-request preparation.
+An open-source, provider-neutral agent skill for turning product requirements, feature discussions, and PRDs into detailed GitHub Epics and sub-issues, then delivering one approved issue through an isolated worktree, tests, independent review, and pull-request preparation.
 
 The skill is designed for teams and solo builders who want a durable workflow:
 
 ```text
 Requirement → GitHub Epic / sub-issues → decision gates
-→ Codex worktree implementation → acceptance review → pull request
+→ isolated agent implementation → acceptance review → pull request
 ```
 
 ## Why this skill
@@ -14,18 +14,23 @@ Requirement → GitHub Epic / sub-issues → decision gates
 - Embeds relevant document requirements inside each child issue.
 - Verifies product claims against current code before filing or implementing work.
 - Uses native GitHub parent/sub-issue relationships when available.
-- Treats one implementation issue as one Codex task, worktree, branch, and pull request.
+- Treats one implementation issue as one agent session, worktree, branch, and pull request.
 - Separates hard dependencies from ordering-only conflicts.
 - Preserves dirty worktrees and unrelated user changes.
 - Keeps Issue edits, commits, pushes, PRs, merges, releases, and deployments behind distinct authorization boundaries.
 - Reviews delivery against acceptance scenarios instead of equating code changes with completion.
 
-## Install with Codex
+## Agent compatibility
+
+- **Codex:** tested and installable today using the instructions below.
+- **Other agent hosts:** the workflow and core instructions are provider-neutral. Host-specific packaging and installation instructions will be added only after they are tested.
+
+## Install in Codex
 
 Ask the built-in skill installer:
 
 ```text
-Use $skill-installer to install https://github.com/merlinz165/codex-github-feature-delivery-skill/tree/main/skills/github-feature-delivery
+Use $skill-installer to install https://github.com/merlinz165/github-feature-delivery-skill/tree/main/skills/github-feature-delivery
 ```
 
 The installed invocation is:
@@ -41,7 +46,7 @@ $github-feature-delivery Turn this feature discussion into a GitHub Epic and imp
 ```
 
 ```text
-$github-feature-delivery Implement GitHub issue #42 in an isolated Codex worktree. Run the relevant tests, but do not push or open a PR.
+$github-feature-delivery Implement GitHub issue #42 in an isolated worktree. Run the relevant tests, but do not push or open a PR.
 ```
 
 ```text
@@ -70,7 +75,7 @@ This project was informed by patterns in:
 - [richkuo/rk-skills](https://github.com/richkuo/rk-skills)
 - [baphuongna/pi-crew](https://github.com/baphuongna/pi-crew)
 
-It is a separate Codex-native implementation with different scope and authorization boundaries.
+It is a separate, provider-neutral implementation with different scope and authorization boundaries.
 
 ## License
 

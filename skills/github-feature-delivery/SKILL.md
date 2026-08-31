@@ -1,13 +1,13 @@
 ---
 name: github-feature-delivery
-description: Turn product requirements, feature discussions, or PRDs into evidence-grounded GitHub Epics and sub-issues, then deliver one approved issue through an isolated Codex worktree, verification, and pull-request preparation. Use for requirement-to-issue planning, issue implementation, acceptance review, or end-to-end GitHub feature delivery. Do not use for ad hoc coding that does not need GitHub tracking.
+description: Turn product requirements, feature discussions, or PRDs into evidence-grounded GitHub Epics and sub-issues, then deliver one approved issue through an isolated worktree, verification, and pull-request preparation. Use for requirement-to-issue planning, issue implementation, acceptance review, or end-to-end GitHub feature delivery. Do not use for ad hoc coding that does not need GitHub tracking.
 metadata:
   short-description: Requirements to verified GitHub issues and pull requests
 ---
 
 # GitHub Feature Delivery
 
-Use GitHub artifacts as durable delivery state and Codex tasks as execution contexts. Do not rely on hidden chat history when an issue, document, commit, or pull request can carry the decision instead.
+Use GitHub artifacts as durable delivery state and agent sessions or tasks as execution contexts. Do not rely on hidden chat history when an issue, document, commit, or pull request can carry the decision instead.
 
 ## Select the Current Mode
 
@@ -40,7 +40,7 @@ For an explicitly requested end-to-end run, execute these modes in order. Stop a
 
 - An Epic represents an outcome or program of work; do not implement an Epic as one coding task.
 - A child implementation issue should be independently understandable, testable, and normally deliverable in one pull request.
-- Default to one child issue → one Codex task → one worktree → one branch → one pull request.
+- Default to one child issue → one agent session → one worktree → one branch → one pull request.
 - Use native GitHub parent/sub-issue relationships when available. A checklist link is a fallback, not equivalent proof of the relationship.
 - Record hard dependencies separately from ordering-only conflicts caused by overlapping files or environments.
 - Do not force a fixed number of issues. Split only when the parts can deliver and verify independently.
@@ -72,8 +72,8 @@ Proceed with an explicit assumption only when it is local, reversible, testable,
 
 - Prefer a purpose-built GitHub connector when available; otherwise use authenticated `gh` commands.
 - If GitHub writes are unavailable, produce complete local drafts and state exactly what was not created remotely.
-- Use the repository's test commands and branch conventions. If none exist, default branches to `codex/issue-<number>-<short-slug>`.
-- Use a Codex-managed worktree or a verified Git worktree for new implementation work. Keep the user's local checkout as the foreground when it contains the only copy of relevant uncommitted changes.
+- Use the repository's test commands and branch conventions. If none exist, default branches to `feature/issue-<number>-<short-slug>`.
+- Use an agent-managed or otherwise verified Git worktree for new implementation work. Keep the user's local checkout as the foreground when it contains the only copy of relevant uncommitted changes.
 - Never copy secrets into a worktree casually. Use repository-approved setup or safe test configuration.
 
 ## Scope Boundary
