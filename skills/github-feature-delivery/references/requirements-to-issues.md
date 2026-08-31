@@ -51,6 +51,13 @@ Identify:
 - **Hard dependency:** the later issue needs the earlier issue's code, data, or decision.
 - **Ordering-only constraint:** the issues are logically independent but should not overlap because they touch the same files, environment, or release surface.
 
+Label each child issue's expected autonomy so the delivery mode knows what to expect before starting work:
+
+- **AFK** — the issue is expected to be deliverable end to end through the standard authorization chain (implement → verify → commit/push/PR when authorized) without a synchronous human checkpoint mid-delivery.
+- **HITL** — delivery is expected to need a human checkpoint during implementation itself (e.g., a visual direction to confirm, an ambiguous edge case likely to surface only once code is written), distinct from a pre-implementation **Decision** issue. Flag this up front rather than letting the delivering session discover it mid-work.
+
+This is a planning label, not a new authorization rule — the granular authorization boundaries in `SKILL.md` still apply regardless of the label.
+
 ## 4. Draft Before Mutating GitHub
 
 Present the proposed Epic, child titles, topology, dependencies, and priority before filing when the user has not already approved the exact issue set.
@@ -90,6 +97,9 @@ Do not create placeholder issues. An independent agent session should be able to
 ```markdown
 ## Goal
 <One independently deliverable outcome.>
+
+## Autonomy
+<AFK — deliverable without a mid-delivery human checkpoint, or HITL — expect a human checkpoint during implementation, and why.>
 
 ## Documented requirements
 <Embed the relevant requirement content. Do not provide only a path.>

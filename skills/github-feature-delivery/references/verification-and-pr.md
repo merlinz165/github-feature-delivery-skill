@@ -48,7 +48,7 @@ Follow changed contracts through relevant producers and consumers. Check as appl
 - concurrency, idempotency, migrations, rollback, and version compatibility;
 - authentication, authorization, privacy, secrets, and regional data boundaries;
 - mobile/desktop or other parity surfaces promised by the issue;
-- recent changes to the same paths;
+- recent changes to the same paths, including other open PRs or in-flight sibling issues with an ordering-only conflict on the same files, environment, or release surface;
 - documentation and configuration drift.
 
 Do not expand into a general security or architecture audit unless the issue or diff creates that risk.

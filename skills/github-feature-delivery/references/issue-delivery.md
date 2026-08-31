@@ -11,6 +11,7 @@ Before creating a worktree:
 - read referenced repository documents and instructions;
 - inspect the current code and tests supporting each load-bearing claim;
 - identify unresolved decisions, hard dependencies, and ordering-only conflicts;
+- note the issue's autonomy label if present (AFK or HITL) — for HITL, expect to pause at the flagged checkpoint rather than pushing through it;
 - determine whether the issue can be delivered and verified in one PR.
 
 If the issue is inaccurate but fixable, propose or apply an issue update according to the user's authorization. If it is materially ambiguous, too broad, already completed, or blocked by a decision, stop before implementation.
@@ -58,6 +59,10 @@ Verify that the worktree starts from the intended base before editing. If ignore
 
 When implementation evidence contradicts the issue, stop or update the durable requirement. Do not silently deliver a different product behavior.
 
+If implementation reveals the issue cannot actually close in one PR, stop and propose splitting the remainder into follow-up child issues rather than quietly expanding scope or forcing an oversized PR.
+
+For a delivery long or interrupted enough to span multiple sessions, checkpoint progress on the issue itself (its checklist items or a progress comment) rather than only in local or ephemeral state, so any session resuming the work can read it back without the original conversation.
+
 ## 6. Verify Before Handoff
 
 Run the repository's relevant checks. In proportion to risk, include:
@@ -77,7 +82,7 @@ Only perform the steps explicitly requested or already authorized:
 
 1. Review the intended file list before staging.
 2. Stage only issue-related files.
-3. Commit with the repository's convention and the issue reference.
+3. Commit with the repository's convention and the issue reference. If the repository has no established convention, default to Conventional Commits (`feat:`, `fix:`, `refactor:`, `test:`, `docs:`, ...) with the issue reference in the body.
 4. Push the feature branch.
 5. Create a PR against the verified default branch.
 
