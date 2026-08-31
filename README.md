@@ -28,6 +28,7 @@ The skill is built on [Agent Skills](https://agentskills.io) — the open `SKILL
 |---|---|---|---|
 | Codex | tested, one-command install | `.agents/skills/` | `~/.agents/skills/` |
 | Claude Code | tested, one-command install | `.claude/skills/` | `~/.claude/skills/` |
+| DeepSeek Harness (dsh) | tested, end-to-end run on dsh | `.dsh/skills/` | `~/.dsh/skills/` |
 | Cursor | standard-compatible, untested | `.cursor/skills/` | `~/.cursor/skills/` |
 | Windsurf | standard-compatible, untested | `.windsurf/skills/` | `~/.codeium/windsurf/skills/` |
 | Gemini CLI | standard-compatible, untested | `.gemini/skills/` | `~/.gemini/skills/` |
@@ -70,6 +71,21 @@ ln -s "$(pwd)/skills/github-feature-delivery" ~/.claude/skills/github-feature-de
 
 Claude Code loads the skill by its `SKILL.md` frontmatter (`name`/`description`) and invokes it automatically when a request matches — there is no separate `$github-feature-delivery` invocation syntax like Codex's.
 
+## Install in DeepSeek Harness (dsh)
+
+DeepSeek Harness reads the standard `SKILL.md` format natively from the skill roots it scans (`~/.dsh/skills/` for all projects, `.dsh/skills/` under a project). No plugin manifest or packaging file is needed — copy or symlink the skill folder into a root:
+
+```bash
+# user-scoped (all projects)
+mkdir -p ~/.dsh/skills
+ln -s "$(pwd)/skills/github-feature-delivery" ~/.dsh/skills/github-feature-delivery
+# project-scoped
+mkdir -p .dsh/skills
+ln -s "$(pwd)/skills/github-feature-delivery" .dsh/skills/github-feature-delivery
+```
+
+dsh watches these roots and hot-refreshes the running session's skill catalog, so the skill is picked up immediately without a restart. Invoke it with the `/github-feature-delivery` slash command, or let the agent auto-match it from the catalog `name`/`description` — there is no `$`-syntax invocation like Codex's.
+
 ## Install in any other Agent Skills-compatible host
 
 No installer or plugin manifest exists for these yet, but the skill folder is self-contained and follows the standard `SKILL.md` format, so a manual copy is normally enough:
@@ -109,6 +125,8 @@ skills/github-feature-delivery/
 ```
 
 The first release is instruction-only. It does not install a GitHub App, create GitHub Actions workflows, or bundle credentials.
+
+DeepSeek Harness needs no packaging entry — it reads the `skills/github-feature-delivery/` folder directly from a skill root; see [Install in DeepSeek Harness](#install-in-deepseek-harness-dsh).
 
 ## Adding support for another agent host
 
