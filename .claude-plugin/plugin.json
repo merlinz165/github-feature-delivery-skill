@@ -1,0 +1,20 @@
+{
+  "name": "github-feature-delivery",
+  "version": "0.2.0",
+  "description": "Turn product requirements into evidence-grounded GitHub Epics and sub-issues, then deliver one approved issue through an isolated worktree, verification, and pull-request preparation.",
+  "author": {
+    "name": "merlinz165"
+  },
+  "license": "MIT",
+  "keywords": [
+    "github",
+    "issues",
+    "epics",
+    "pull-requests",
+    "worktree",
+    "delivery",
+    "requirements",
+    "acceptance-review"
+  ],
+  "homepage": "https://github.com/merlinz165/github-feature-delivery-skill"
+}
